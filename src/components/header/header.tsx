@@ -49,17 +49,17 @@ export default function Example() {
                         </Link>
                       </li>
                       <li>
-                        <Link to="login" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        <Link to="mujer" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                           Mujer
                         </Link>
                       </li>
                       <li>
-                        <Link to="/vende" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        <Link to="/hombre" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                           Hombre
                         </Link>
                       </li>
                       <li>
-                        <Link to="/contacto" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        <Link to="/niños" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                           Niños
                         </Link>
                       </li>
