@@ -8,6 +8,6 @@
 
 puedes correr este proyecto corriendo este comando :
 
-### `npm start`
+### `npm run start`
 
 
