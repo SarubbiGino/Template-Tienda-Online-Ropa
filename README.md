@@ -4,12 +4,12 @@
 
 
   
-Instalar dependencias : 
-### `npm install`
+# Instalar dependencias : 
+ `npm install`
 
 
 
-puedes correr este proyecto corriendo este comando :
-### `npm run start`
+# puedes correr este proyecto corriendo este comando :
+ `npm run start`
 
 
