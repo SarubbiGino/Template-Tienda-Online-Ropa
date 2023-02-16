@@ -1,6 +1,6 @@
 # Proyecto propio "ecommerce ropa overlife"
  
- ### `creado con React, Tailwind CSS, FlowBite`
+ ### `creado con React Typescript, Tailwind CSS, FlowBite`
   
 # Instalar dependencias
  
