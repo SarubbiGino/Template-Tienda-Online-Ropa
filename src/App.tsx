@@ -3,9 +3,8 @@ import logo from './logo.svg';
 import Header from "../src/components/header/header";
 import FirstMain from "../src/components/FirstMain/FirstMain";
 import Footer from "../src/components/footer/footer";
-import Seccion from "../src/components/seccion/seccion";
-
-
+import Seccion from "./components/seccionGorras/seccionGorras";
+import Prueba from "./components/seccionRemeras/seccionRemeras";
 import './App.css';
 
 
@@ -15,6 +14,8 @@ function App() {
       <Header />
       <FirstMain />
       <Seccion />
+
+      <Prueba />
       <Footer />
     </div>
   );
