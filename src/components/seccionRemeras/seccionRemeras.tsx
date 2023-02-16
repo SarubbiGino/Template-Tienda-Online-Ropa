@@ -1,111 +1,204 @@
 import { useState } from "react";
-
-
+import Remera1 from "../../img/remera1.png";
+import Remera2 from "../../img/remera2.png";
+import Remera3 from "../../img/remera3.png";
+import Remera4 from "../../img/remera4.png";
+import Remera5 from "../../img/remera5.png";
+import Remera6 from "../../img/remera6.png";
+import Remera7 from "../../img/remera7.png";
+import Remera8 from "../../img/remera8.png";
+import Remera9 from "../../img/remera9.png";
+import Remera10 from "../../img/remera10.png";
+import Gorra1 from "../../img/gorra1.png";
+import Gorra2 from "../../img/gorra2.png";
+import Gorra3 from "../../img/gorra3.png";
+import Gorra4 from "../../img/gorra4.png";
 
 interface Remera {
     id: number;
     name: string;
     imageSrc: string;
-    price: string;
+    price: number;
     color: string;
+    categoria: string;
 }
 
 const remeras: Remera[] = [
     {
         id: 1,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/564x/0e/06/14/0e0614f75d3cc462520f415cec3b93a1.jpg',
-        price: '$35',
+        name: 'Edition Man Pink',
+        imageSrc: Remera1,
+        price: 2500,
         color: 'negro',
+        categoria: 'remera',
     },
     {
         id: 2,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/564x/8e/58/21/8e5821445ff86a540e432bee0ea3d6b8.jpg',
-        price: '$35',
+        name: 'What WOW',
+        imageSrc: Remera2,
+        price: 2500,
         color: 'negro',
+        categoria: 'remera',
     },
     {
         id: 3,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/564x/81/b9/98/81b998d713558aa9a87a93bc03eb2599.jpg',
-        price: '$35',
+        name: 'The love peace',
+        imageSrc: Remera3,
+        price: 3500,
         color: 'beige',
+        categoria: 'remera',
     },
     {
         id: 4,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/564x/c8/83/02/c88302fc46179dde94174349cb690d33.jpg',
-        price: '$35',
+        name: 'The love peace two',
+        imageSrc: Remera4,
+        price: 3500,
         color: 'beige',
+        categoria: 'remera',
     },
     {
         id: 5,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/736x/e9/cd/03/e9cd03ae2be0dfe487d0f987cbe3ce23.jpg',
-        price: '$35',
+        name: 'Life Green',
+        imageSrc: Remera5,
+        price: 1800,
         color: 'blanco',
+        categoria: 'remera',
     },
     {
         id: 6,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/564x/1f/b1/2d/1fb12d41f681b35708c154365384ea3d.jpg',
-        price: '$35',
+        name: 'The cubes emotions',
+        imageSrc: Remera6,
+        price: 3500,
         color: 'blanco',
+        categoria: 'remera',
     },
     {
         id: 7,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/564x/da/7c/c0/da7cc0c6fe35b6d069dc03b9e894b01e.jpg',
-        price: '$35',
+        name: 'The ocean',
+        imageSrc: Remera7,  
+        price: 1400,
         color: 'blanco',
+        categoria: 'remera',
     },
     {
         id: 8,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/564x/32/be/79/32be79b925be362de97aa7608f77c91a.jpg',
-        price: '$35',
+        name: 'Eyes ever seen',
+        imageSrc: Remera8,
+        price: 3500,
         color: 'blanco',
+        categoria: 'remera',
     },
     {
         id: 9,
-        name: 'Basic Tee',
-        imageSrc: 'https://i.pinimg.com/564x/e3/f3/77/e3f3778ac2c40e2c5106c7ba229a527d.jpg',
-        price: '$35',
+        name: 'The sun',
+        imageSrc: Remera9,
+        price: 2500,
         color: 'negro',
+        categoria: 'remera',
+    },
+    {
+        id: 10,
+        name: 'Change',
+        imageSrc: Remera10,
+        price: 2500,
+        color: 'negro',
+        categoria: 'remera',
+    },
+    {
+        id: 11,
+        name: 'Change',
+        imageSrc: Gorra1,
+        price: 2500,
+        color: 'beige',
+        categoria: 'gorra',
+    },
+    {
+        id: 12,
+        name: 'Change',
+        imageSrc: Gorra2,
+        price: 2500,
+        color: 'blanco',
+        categoria: 'gorra',
+    },
+    {
+        id: 13,
+        name: 'Change',
+        imageSrc: Gorra3,
+        price: 2500,
+        color: 'negro',
+        categoria: 'gorra',
+    },
+    {
+        id: 14,
+        name: 'Change',
+        imageSrc: Gorra4,
+        price: 2500,
+        color: 'negro',
+        categoria: 'gorra',
     },
 ];
 
 
-const FiltroRemeras = () => {
-    const [filtro, setFiltro] = useState('todos');
 
-    const cambiarFiltro = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setFiltro(e.target.value);
+
+
+
+const FiltroProductos = () => {
+    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
+    const [colorSeleccionado, setColorSeleccionado] = useState('');
+
+    const cambiarCategoria = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setCategoriaSeleccionada(e.target.value);
     };
 
-    const remerasFiltradas = filtro === 'todos' ? remeras : remeras.filter(remera => remera.color === filtro);
+    const cambiarColor = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setColorSeleccionado(e.target.value);
+    };
+
+    const productosFiltrados = remeras.filter(producto => {
+        if (!categoriaSeleccionada && !colorSeleccionado) {
+            return true; // Si no hay filtro, devuelvo todos los productos
+        } else if (categoriaSeleccionada && !colorSeleccionado) {
+            return producto.categoria === categoriaSeleccionada;
+        } else if (!categoriaSeleccionada && colorSeleccionado) {
+            return producto.color === colorSeleccionado;
+        } else {
+            return producto.categoria === categoriaSeleccionada && producto.color === colorSeleccionado;
+        }
+    });
 
     return (
         <div className="bg-white">
             <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                <h2 className="text-2xl font-bold tracking-tight text-gray-900">Nuestras Remeras verano 2023</h2>
-                <label htmlFor="filtro">Filtrar por color:</label>
-                <select id="filtro" value={filtro} onChange={cambiarFiltro} className='border-none'>
-                    <option value="todos">Todos</option>
-                    <option value="negro">Negro</option>
-                    <option value="blanco">Blanco</option>
-                    <option value="beige">Beige</option>
-                </select>
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900">Nuestros Productos verano 2023</h2>
+            <div className="flex justify-between">
+                <div>
+                    <label htmlFor="categoria">Elegir categoría:</label>
+                    <select id="categoria" value={categoriaSeleccionada} onChange={cambiarCategoria} className='border-none'>
+                        <option value="">Todos los productos</option>
+                        <option value="remera">Remera</option>
+                        <option value="gorra">Gorra</option>
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor="color">Elegir color:</label>
+                    <select id="color" value={colorSeleccionado} onChange={cambiarColor} className='border-none'>
+                        <option value="">Todos los colores</option>
+                        <option value="negro">Negro</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="beige">Beige</option>
+                    </select>
+                </div>
+            </div>
                 <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                    {remerasFiltradas.map(product => (
+
+                    {productosFiltrados.map(product => (
                         <div key={product.id} className="group relative">
                             <div className="w-full min-h-80 bg-gray-100 aspect-w-1 aspect-h-1 rounded-lg overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                                 <img
                                     src={product.imageSrc}
                                     alt={product.name}
-                                    className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                />
+                                    className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
                             </div>
                             <div className="mt-4 flex justify-between">
                                 <div>
@@ -121,10 +214,11 @@ const FiltroRemeras = () => {
                             </div>
                         </div>
                     ))}
+
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default FiltroRemeras;
+export default FiltroProductos;

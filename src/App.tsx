@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import Header from "../src/components/header/header";
 import FirstMain from "../src/components/FirstMain/FirstMain";
 import Footer from "../src/components/footer/footer";
-import SeccionGorras from "./components/seccionGorras/seccionGorras";
+import SeccionGorras from "./components/seccionGorras/seccionGorra";
 import SeccionRemeras from "./components/seccionRemeras/seccionRemeras";
 import './App.css';
 
