@@ -1,4 +1,4 @@
-# Proyecto propio "ecommerce ropa overlife"
+# Proyecto propio "Template-Tienda-Online-Ropa"
 `creado con React Typescript, Tailwind CSS, FlowBite`
  
 # Instalar dependencias : 
