@@ -1,14 +1,11 @@
 import { useState } from "react";
-import Remera1 from "../../img/remera1.png";
-import Remera2 from "../../img/remera2.png";
-import Remera3 from "../../img/remera3.png";
-import Remera4 from "../../img/remera4.png";
-import Remera5 from "../../img/remera5.png";
-import Remera6 from "../../img/remera6.png";
-import Remera7 from "../../img/remera7.png";
-import Remera8 from "../../img/remera8.png";
-import Remera9 from "../../img/remera9.png";
-import Remera10 from "../../img/remera10.png";
+import Remera1 from "./img/remeraMujer2.png";
+import Remera2 from "./img/remeraMujer3.png";
+import Remera3 from "./img/remeraMujer4.png";
+import Remera4 from "./img/remeraMujer5.png";
+import Remera5 from "./img/remeraMujer6.png";
+import Remera6 from "./img/remeraMujer7.png";
+import Remera7 from "./img/remeraMujer8.png";
 import Gorra1 from "../../img/gorra1.png";
 import Gorra2 from "../../img/gorra2.png";
 import Gorra3 from "../../img/gorra3.png";
@@ -29,7 +26,7 @@ const remeras: Remera[] = [
         name: 'Edition Man Pink',
         imageSrc: Remera1,
         price: 2500,
-        color: 'negro',
+        color: 'blanco',
         categoria: 'remera',
     },
     {
@@ -45,7 +42,7 @@ const remeras: Remera[] = [
         name: 'The love peace',
         imageSrc: Remera3,
         price: 3500,
-        color: 'beige',
+        color: 'negro',
         categoria: 'remera',
     },
     {
@@ -53,7 +50,7 @@ const remeras: Remera[] = [
         name: 'The love peace two',
         imageSrc: Remera4,
         price: 3500,
-        color: 'beige',
+        color: 'negro',
         categoria: 'remera',
     },
     {
@@ -61,7 +58,7 @@ const remeras: Remera[] = [
         name: 'Life Green',
         imageSrc: Remera5,
         price: 1800,
-        color: 'blanco',
+        color: 'negro',
         categoria: 'remera',
     },
     {
@@ -74,38 +71,14 @@ const remeras: Remera[] = [
     },
     {
         id: 7,
-        name: 'The ocean',
+        name: 'The cubes emotions',
         imageSrc: Remera7,
-        price: 1400,
-        color: 'blanco',
-        categoria: 'remera',
-    },
-    {
-        id: 8,
-        name: 'Eyes ever seen',
-        imageSrc: Remera8,
         price: 3500,
         color: 'blanco',
         categoria: 'remera',
     },
     {
-        id: 9,
-        name: 'The sun',
-        imageSrc: Remera9,
-        price: 2500,
-        color: 'negro',
-        categoria: 'remera',
-    },
-    {
-        id: 10,
-        name: 'Change',
-        imageSrc: Remera10,
-        price: 2500,
-        color: 'negro',
-        categoria: 'remera',
-    },
-    {
-        id: 11,
+        id: 8,
         name: 'Change',
         imageSrc: Gorra1,
         price: 2500,
@@ -113,7 +86,7 @@ const remeras: Remera[] = [
         categoria: 'gorra',
     },
     {
-        id: 12,
+        id: 9,
         name: 'Change',
         imageSrc: Gorra2,
         price: 2500,
@@ -121,7 +94,7 @@ const remeras: Remera[] = [
         categoria: 'gorra',
     },
     {
-        id: 13,
+        id: 10,
         name: 'Change',
         imageSrc: Gorra3,
         price: 2500,
@@ -129,14 +102,15 @@ const remeras: Remera[] = [
         categoria: 'gorra',
     },
     {
-        id: 14,
+        id: 11,
         name: 'Change',
         imageSrc: Gorra4,
         price: 2500,
         color: 'negro',
         categoria: 'gorra',
     },
-
+    
+    
 ];
 
 
@@ -171,8 +145,8 @@ const FiltroProductos = () => {
     return (
         <div className="bg-white">
             <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                <h1 className="text-3xl font-bold tracking-tight text-gray-900">Nuestros Productos verano 2023</h1>
-                <h2 className="text-3xl tracking-tight text-gray-500">Hombre</h2>
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900">Nuestros Productos verano 2023</h1>
+                <h2 className="text-3xl tracking-tight text-gray-500">Mujer</h2>
                 <div className="flex justify-between">
                     <div>
                         <select id="categoria" value={categoriaSeleccionada} onChange={cambiarCategoria} className='border-none'>
@@ -219,9 +193,9 @@ const FiltroProductos = () => {
 
                     </div>
                 </div>
-
+                
             </div>
-
+            
         </div>
     );
 }

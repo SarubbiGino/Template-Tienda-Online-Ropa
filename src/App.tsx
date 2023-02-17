@@ -5,6 +5,7 @@ import FirstMain from "../src/components/FirstMain/FirstMain";
 import Footer from "../src/components/footer/footer";
 import SeccionGorras from "./components/seccionGorras/seccionGorra";
 import SeccionRemeras from "./components/seccionRemeras/seccionRemeras";
+import SeccionMujeres from "./components/seccionMujeres/seccionMujeres";
 import './App.css';
 
 
@@ -15,6 +16,7 @@ function App() {
       <FirstMain />
       <SeccionGorras />
       <SeccionRemeras />
+      <SeccionMujeres />
       <Footer />
     </div>
   );

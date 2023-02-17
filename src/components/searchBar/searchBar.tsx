@@ -19,7 +19,7 @@ function SearchBar() {
     <div>
       <form onSubmit={handleSearchSubmit}>
         <input type="text" onChange={handleSearch} placeholder="Buscar" className="border-none w-72" />
-        <button className="bg-black text-white px-4 py-2 rounded-lg ml-4">Buscar</button>
+        <button className="bg-black text-white px-4 py-2 rounded-lg ml-4 ">Buscar</button>
       </form>
     </div>
   );

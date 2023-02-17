@@ -3,12 +3,6 @@ import imagenpirncipal from '../../img/gorras.png';
 import SearchBar from '../searchBar/searchBar';
 
 
-
-
-
-
-
-
 export default function Example() {
   return (
     <div className=" relative overflow-hidden bg-[#e9d2b4] ">
@@ -31,10 +25,7 @@ export default function Example() {
                 <img
                   className=" small:h-3/4 w-2/4 h-65 rounded-lg drop-shadow-[80px_50px_5px_rgba(0,0,0,.5)] small:w-[300px] sm:w-[300px] lg:w-[600px] md:w-[600px]   "
                   src={imagenpirncipal}
-                  alt=""
-
-                />
-
+                  alt=""/>
               </div>
             </div>
           </div>
