@@ -1,5 +1,13 @@
 import Overside1 from '../../img/overside1.jpg';
 import imagenpirncipal from '../../img/gorras.png';
+import SearchBar from '../searchBar/searchBar';
+
+
+
+
+
+
+
 
 export default function Example() {
   return (
@@ -14,8 +22,7 @@ export default function Example() {
               Este año no te quedes en casa y vistete con el mejor estilo.
             </p>
             <div className="mt-12">
-              <input type="text" placeholder='Buscar...' className='w-80' />
-              <button className="bg-black text-white px-4 py-2 rounded-lg ml-4"  >Buscar</button>
+              <SearchBar />
             </div>
           </div>
           <div className=" mt-12 sm:mt-16 sm:max-w-lg sm:mx-auto lg:mx-0">
