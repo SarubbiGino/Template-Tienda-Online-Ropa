@@ -1,152 +1,12 @@
 import { useState } from "react";
-import Remera1 from "../../img/remera1.png";
-import Remera2 from "../../img/remera2.png";
-import Remera3 from "../../img/remera3.png";
-import Remera4 from "../../img/remera4.png";
-import Remera5 from "../../img/remera5.png";
-import Remera6 from "../../img/remera6.png";
-import Remera7 from "../../img/remera7.png";
-import Remera8 from "../../img/remera8.png";
-import Remera9 from "../../img/remera9.png";
-import Remera10 from "../../img/remera10.png";
-import Gorra1 from "../../img/gorra1.png";
-import Gorra2 from "../../img/gorra2.png";
-import Gorra3 from "../../img/gorra3.png";
-import Gorra4 from "../../img/gorra4.png";
-
-interface Remera {
-    id: number;
-    name: string;
-    imageSrc: string;
-    price: number;
-    color: string;
-    categoria: string;
-}
-
-const remeras: Remera[] = [
-    {
-        id: 1,
-        name: 'Edition Man Pink',
-        imageSrc: Remera1,
-        price: 2500,
-        color: 'negro',
-        categoria: 'remera',
-    },
-    {
-        id: 2,
-        name: 'What WOW',
-        imageSrc: Remera2,
-        price: 2500,
-        color: 'negro',
-        categoria: 'remera',
-    },
-    {
-        id: 3,
-        name: 'The love peace',
-        imageSrc: Remera3,
-        price: 3500,
-        color: 'beige',
-        categoria: 'remera',
-    },
-    {
-        id: 4,
-        name: 'The love peace two',
-        imageSrc: Remera4,
-        price: 3500,
-        color: 'beige',
-        categoria: 'remera',
-    },
-    {
-        id: 5,
-        name: 'Life Green',
-        imageSrc: Remera5,
-        price: 1800,
-        color: 'blanco',
-        categoria: 'remera',
-    },
-    {
-        id: 6,
-        name: 'The cubes emotions',
-        imageSrc: Remera6,
-        price: 3500,
-        color: 'blanco',
-        categoria: 'remera',
-    },
-    {
-        id: 7,
-        name: 'The ocean',
-        imageSrc: Remera7,
-        price: 1400,
-        color: 'blanco',
-        categoria: 'remera',
-    },
-    {
-        id: 8,
-        name: 'Eyes ever seen',
-        imageSrc: Remera8,
-        price: 3500,
-        color: 'blanco',
-        categoria: 'remera',
-    },
-    {
-        id: 9,
-        name: 'The sun',
-        imageSrc: Remera9,
-        price: 2500,
-        color: 'negro',
-        categoria: 'remera',
-    },
-    {
-        id: 10,
-        name: 'Change',
-        imageSrc: Remera10,
-        price: 2500,
-        color: 'negro',
-        categoria: 'remera',
-    },
-    {
-        id: 11,
-        name: 'Change',
-        imageSrc: Gorra1,
-        price: 2500,
-        color: 'beige',
-        categoria: 'gorra',
-    },
-    {
-        id: 12,
-        name: 'Change',
-        imageSrc: Gorra2,
-        price: 2500,
-        color: 'blanco',
-        categoria: 'gorra',
-    },
-    {
-        id: 13,
-        name: 'Change',
-        imageSrc: Gorra3,
-        price: 2500,
-        color: 'negro',
-        categoria: 'gorra',
-    },
-    {
-        id: 14,
-        name: 'Change',
-        imageSrc: Gorra4,
-        price: 2500,
-        color: 'negro',
-        categoria: 'gorra',
-    },
-
-];
+import { remeras } from "../../data";
 
 
-
-
-
-
-const FiltroProductos = () => {
+const SeccionRemeras = ({ }) => {
+    
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
     const [colorSeleccionado, setColorSeleccionado] = useState('');
+
 
     const cambiarCategoria = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setCategoriaSeleccionada(e.target.value);
@@ -156,9 +16,12 @@ const FiltroProductos = () => {
         setColorSeleccionado(e.target.value);
     };
 
+
+
+
     const productosFiltrados = remeras.filter(producto => {
         if (!categoriaSeleccionada && !colorSeleccionado) {
-            return true; // Si no hay filtro, devuelvo todos los productos
+            return true;
         } else if (categoriaSeleccionada && !colorSeleccionado) {
             return producto.categoria === categoriaSeleccionada;
         } else if (!categoriaSeleccionada && colorSeleccionado) {
@@ -182,7 +45,6 @@ const FiltroProductos = () => {
                         </select>
                     </div>
                     <div>
-
                         <select id="color" value={colorSeleccionado} onChange={cambiarColor} className='border-none'>
                             <option value="">Todos los colores</option>
                             <option value="negro">Negro</option>
@@ -193,37 +55,41 @@ const FiltroProductos = () => {
                 </div>
                 <div id="remeras-section">
                     <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-
-                        {productosFiltrados.map(productos => (
-                            <div key={productos.id} className="group relative">
-                                <div className="w-full min-h-80 bg-gray-100 aspect-w-1 aspect-h-1 rounded-lg overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        {productosFiltrados.map(producto => (
+                            <div key={producto.id} className="group relative ">
+                                <div className="w-full min-h-80 bg-gray-100 aspect-w-1 aspect-h-1 rounded-lg overflow-hidden  lg:h-80 lg:aspect-none hover:opacity-75 ">
                                     <img
-                                        src={productos.imageSrc}
-                                        alt={productos.name}
-                                        className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
+                                        src={producto.imageSrc}
+                                        alt={producto.name}
+                                        className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                                    />
                                 </div>
                                 <div className="mt-4 flex justify-between">
                                     <div>
                                         <h3 className="text-sm text-gray-700">
-                                            <a href="#">
-                                                <span aria-hidden="true" className="absolute inset-0" />
-                                                {productos.name}
-                                            </a>
+                                            <p >
+                                                <span aria-hidden="true" className="absolute inset-0 h-5" />
+                                                {producto.name}
+                                            </p>
                                         </h3>
-                                        <p className="mt-1 text-sm font-medium text-gray-900">{productos.price}</p>
+                                        <p className="mt-1 text-sm font-medium text-gray-900">{producto.price}</p>
                                     </div>
-                                    <p className="text-sm font-medium text-gray-900">{productos.color}</p>
+                                    <button  className="px-3 py-1 text-sm font-medium  rounded-md h-10 w-10 cursor-pointer hover:bg-slate-200 focus:bg-green-300">
+                                        <svg fill="none" stroke="black" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                         ))}
-
                     </div>
+
                 </div>
-
             </div>
-
-        </div>
+        </div >
     );
-}
+};
 
-export default FiltroProductos;
+export default SeccionRemeras;
+
+
