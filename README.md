@@ -1,4 +1,4 @@
-# Proyecto propio "Template-Tienda-Online-Ropa"
+# Proyecto propio EN PROCESO "Template-Tienda-Online-Ropa"
 `creado con React Typescript, Tailwind CSS, FlowBite`
  
 # Instalar dependencias : 
