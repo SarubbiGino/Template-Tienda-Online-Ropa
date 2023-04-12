@@ -11,6 +11,7 @@ Swiper </br>
 ## Instalación
 Clona este repositorio en tu máquina local. </br>
 Abre la terminal y navega al directorio donde clonaste el repositorio. </br>
+</br>
 Ejecuta ``` 
     npm  install 
         ``` para instalar todas las dependencias. </br>
